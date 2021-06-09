@@ -1,0 +1,211 @@
+% --- LaTeX CV Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 11pt]{article}
+
+% --- Package imports ---
+
+\usepackage{enumitem, longtable, amsmath, array}
+\usepackage[hidelinks]{hyperref}
+
+% --- To add "Last Updated"
+\usepackage[usenames,dvipsnames]{xcolor} 
+\definecolor{date}{HTML}{666666} 
+\usepackage[absolute]{textpos}
+\usepackage[UKenglish]{isodate}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{1mm}
+\newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
+\color{date}\fontsize{10pt}{10pt}\selectfont 
+Last Updated on \today
+\end{textblock}}
+
+% --- To add my Picture
+\usepackage{graphicx}
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0in, footskip=.2in]{geometry}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% --- Page formatting settings ---
+
+% Set link colors
+\usepackage[dvipsnames]{xcolor}
+\hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=MidnightBlue}
+
+% Set font to Libertine, including math support
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+
+% Remove page numbering
+\pagenumbering{gobble}
+
+% Define font size and color for section headings
+\newcommand{\headingfont}{\Large\color{OliveGreen}}
+
+% --- CV section settings ---
+% Note: each section of this table (Education, Awards, Publications etc.) is 
+% stored in a two-column table. The left-hand column is narrow (1 inch) and is 
+% meant to store dates. The right-hand column is wide (5.2 inches) and stores 
+% the main text.  Sections in which each entry might have multiple lines 
+% (e.g., Education) are stored in a 'SectionTable' environment). Sections in 
+% which each entry might just have one line are stored in a 'SectionTableSingleSpace'
+% environment. The only difference between the two environments is the line 
+% spacing between each entry. Both environments take one argument, which is the
+% title of the section. See main document for how these environments are used.
+
+% Define settings for left-hand column in which dates are printed
+\newcolumntype{R}{>{\raggedleft}p{1in}}
+
+% Define 'SectionTable' environment
+\newenvironment{SectionTable}[1]{
+	\renewcommand*{\arraystretch}{1.7}
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{5.2in}} & #1 \\}
+{\end{longtable}\vspace{-.3cm}}
+
+% Define 'SectionTableSingleSpace' environment
+\newenvironment{SectionTableSingleSpace}[1]{
+	\renewcommand*{\arraystretch}{1.2}
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{5.2in}} & #1 \\[0.6em]}
+{\end{longtable}\vspace{-.3cm}}
+
+% --- Document starts here ---
+
+\begin{document}
+\lastupdated
+% --- Name and contact information ---
+
+\begin{SectionTable}{\Huge Michele Righi} &
+\href{mailto:righi.michy@gmail.com}{righi.michy@gmail.com}   $\;\boldsymbol{\cdot}\;$ 
+\href{https://github.com/mikyll}{GitHub} $\;\boldsymbol{\cdot}\;$
+\href{https://www.linkedin.com/in/michele-righi-095283195/}{LinkedIn} \newline
++39-337-1008393 $\;\boldsymbol{\cdot}\;$
+Citizenship: Republic of San Marino\hfill
+\smash{\includegraphics[width=3cm]{Michele Righi avatar.png}}
+\end{SectionTable}
+
+% --- Section: Research interests ---
+
+\begin{SectionTable}{\headingfont Research interests}
+& operating systems, network protocols, network systems, designs and code, parallel algorithms, virtual machines, file and storage systems, distributed systems
+\end{SectionTable}
+
+% --- Section: Education ---
+
+\begin{SectionTable}{\headingfont Education}
+%2019 -- Present & 
+%\textbf{University 1} -- City, State \newline
+%PhD in Subject \newline 
+%Mentors: Professors A, B. \textit{GPA: X.YZ}. \\
+
+2021 -- Present & 
+\textbf{Alma Mater Studiorum - University of Bologna} -- Bologna, Italy \newline
+MS in Computer Engineering \newline 
+%Mentors: Professors C, D. \textit{GPA: X.YZ}.
+\\
+
+2017 -- 2021 & 
+\textbf{Alma Mater Studiorum - University of Bologna} -- Bologna, Italy \newline
+BS in Computer Engineering. \textit{Graduated with 91/110} \newline
+Thesis: "Progetto di Applicazioni e Giochi Multiplayer su Architettura Unity DOTS"
+Mentors: Prof. Paolo Bellavista, Dr. Andrea Garbugli. \\
+
+% --- Un-comment the next few lines if you want to include some courses you've taken ---
+
+%& \textbf{Selected coursework}
+%\begin{itemize}[itemsep=0pt, leftmargin=*]
+%\item \textit{Statistics}: Asymptotic statistics, Mathematical statistics, Functional data analysis, High-dimensional statistics, Information theory
+%\item \textit{Mathematics}: Measure theory, Functional analysis, Measure-theoretic probability with martingales
+%\end{itemize}
+
+\end{SectionTable}
+
+% --- Section: Awards, scholarships, etc ---
+
+%\begin{SectionTableSingleSpace}{\headingfont Honors and scholarships}
+%2021 & 
+%Award 1 (Organization that gave you the award)\newline
+%\textit{Maybe this award needs a short description}. \\
+
+%2020 &
+%Award 2 (Organization that gave you the award; %\href{https://en.wikibooks.org/wiki/LaTeX/Hyperlinks}{link if you want}) \\
+
+%2019 &
+%Award 3 (Organization that gave you the award)
+%\end{SectionTableSingleSpace}
+
+% --- Section: Project and research experience ---
+
+\begin{SectionTable}{\headingfont Project and research experience}
+November 2020 -- March 2021 &
+\textbf{Progetto di Applicazioni e Giochi Multiplayer su Architettura Unity DOTS} \newline
+Mentors: Prof. Paolo Bellavista, Dr. Andrea Garbugli (Alma Mater Studiorum). \newline
+The thesis purpose was to analyze and outline the advantages of the new Unity Data-Oriented Technology Stack, compared to the traditional architecture of the game engine, which was based on a component model. Moreover, it was required the development of a complete multiplayer videogame prototype, with simple basic gameplay mechanics, built using DOTS.
+
+GitHub repository \href{https://github.com/mikyll/UnityDOTS-Thesis}{here}. Presentation and summary of findings available \href{https://github.com/mikyll/UnityDOTS-Thesis/blob/main/Presentation/PresentationDOTS (pdf).pdf}{here}.\\
+
+March 2020 -- June 2020 &
+\textbf{Cluedo Game - Software Engineering Project} \newline
+To pass the Software Engineering course we had to create e team of 3 and choose a topic to make the project document and a prototype. We decided to make an application for the murder mystery board game "Cluedo". Together we made the document through all the project phases, following the waterfall model, and we also submitted a presentation to show the work and choices done during the process. The game was coded entirely in Java (we used javafx for the graphics).
+
+GitHub repository \href{https://github.com/mikyll/Cluedo}{here}. Presentation \href{https://github.com/mikyll/Cluedo/blob/master/Presentazione/Presentazione Cluedo (pdf).pdf}{here}.\\
+\end{SectionTable}
+
+% --- Section: Job experience ---
+
+\begin{SectionTable}{\headingfont Job experience}
+2016 -- 2020 &
+Shop assistant in small family business \newline
+\textit{I worked as sales clerk and cashier in my dad's light armory shop. The job was on call, during summer.} \\
+\end{SectionTable}
+
+% --- Section: Talks and tutorials ---
+
+\begin{SectionTable}{\headingfont Talks and tutorials}
+March 2021 &
+Progetto di Applicazioni e Giochi Multiplayer su Architettura Unity DOTS \newline
+\textit{The presentation of the bachelor's degree thesis in Computer Engineering. I explained the analysis of the Unity DOTS architecture, showing how I implemented the game and the stress test prototypes. Then I showed the experimental results obtained and I outlined the main advantages and disadvantages of the stack, compared to the traditional architecture.} \\
+
+June 2020 &
+Cluedo Presentation \newline
+\textit{The purpose of this presentation was to show off the application of our project and how we made it (design patterns, design principles, main choices).} \\
+\end{SectionTable}
+
+% --- Section: Technical skills ---
+
+\begin{SectionTable}{\headingfont Technical skills}
+& \textbf{Programming languages} \newline
+Proficient in: C, Java, JavaScript, Shell Script \newline
+Familiar with: C\#, CSS, SQL, C++, Kotlin, Matlab, Assembly \\
+
+& \textbf{Operating Systems} \newline
+Windows, Linux, Android, Raspberry Pi OS \\
+
+& \textbf{Software} \newline
+Git, Unity, Visual Studio, \LaTeX, Microsoft Office Suite, DB2 \\
+
+& \textbf{Languages} \newline
+Italian (mother language), English (advanced)
+\end{SectionTable}
+
+% --- Section: Other interests/hobbies ---
+
+\begin{SectionTable}{\headingfont Other interests}
+& Videogames (to play and to develop), application development, Arduino \& RaspBerry, volleyball, animal lover
+\end{SectionTable}
+
+% --- End of CV! ---
+
+\end{document}
+
+
+
+
+
